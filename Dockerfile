@@ -1,22 +1,12 @@
-# howgood/scipy
+# howgood/scipy:notebook
 
-FROM howgood/python
+FROM howgood/scipy:latest
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-         libblas-dev \
-         liblapack-dev \
-         gfortran \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean -y \
-    && apt-get autoremove -y
+VOLUME /notebooks
+WORKDIR /notebooks
 
-RUN pip install cython \
-    && pip install \
-      numpy \
-      scipy \
-      pandas \
-      gensim \
-    && pip install -U \
-      ipython \
-      ptpython
+RUN pip install -U ipython[notebook]
+
+EXPOSE 8888
+
+RUN ipython notebook --no-browser --port 8888
