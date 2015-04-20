@@ -9,4 +9,4 @@ RUN pip install -U ipython[notebook]
 
 EXPOSE 8888
 
-RUN ipython notebook --no-browser --port 8888
+CMD ipython notebook --no-browser --port 8888
