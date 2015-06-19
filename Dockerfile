@@ -5,7 +5,7 @@ FROM howgood/scipy:latest
 VOLUME /notebooks
 WORKDIR /notebooks
 
-RUN pip install -U ipython[notebook]
+RUN pip install --upgrade ipython[notebook]
 
 EXPOSE 8888
 
