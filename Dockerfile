@@ -11,6 +11,7 @@ RUN apt-get update \
     && apt-get clean -y \
     && apt-get autoremove -y
 
+# Use pip to install the latest packages
 RUN pip install --no-cache-dir --upgrade \
       cython \
       numpy \
