@@ -16,7 +16,12 @@ RUN pip install --no-cache-dir --upgrade \
       cython \
       numpy \
       scipy \
-      pandas \
       gensim \
+      sqlparse \
+      pandas \
+      openpyxl \
+      xlrd \
+      xlwt \
+      xlsxwriter \
       ipython \
       ptpython
