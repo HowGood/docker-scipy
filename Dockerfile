@@ -15,13 +15,4 @@ RUN apt-get update \
 RUN pip install --no-cache-dir --upgrade \
       cython \
       numpy \
-      scipy \
-      gensim \
-      sqlparse \
-      pandas \
-      openpyxl \
-      xlrd \
-      xlwt \
-      xlsxwriter \
-      ipython \
-      ptpython
+      scipy
