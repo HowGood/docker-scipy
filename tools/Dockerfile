@@ -10,4 +10,5 @@ RUN pip install --no-cache-dir --upgrade \
       xlsxwriter \
       sqlparse \
       ipython \
-      ptpython
+      ptpython \
+    && rm -rf /root/.cache /root/.local /tmp/*
