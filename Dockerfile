@@ -15,4 +15,5 @@ RUN apt-get update \
 RUN pip install --no-cache-dir --upgrade \
       cython \
       numpy \
-      scipy
+      scipy \
+    && rm -rf /root/.cache /root/.local /tmp/*
