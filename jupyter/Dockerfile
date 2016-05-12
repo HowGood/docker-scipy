@@ -3,10 +3,11 @@
 FROM howgood/scipy:tools
 
 # Install tini to manage stray jupyter processes
-RUN TINI_VERSION='0.9.0' \
-    curl -L -o /usr/bin/tini \
+ENV TINI_VERSION v0.9.0
+RUN curl -L -o /tmp/tini \
       "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini" \
-    && chmod +x /usr/bin/tini
+    && mv /tmp/tini /usr/local/bin/tini \
+    && chmod +x /usr/local/bin/tini
 
 # Install the ipython kernel spec, and run it. Then install jupyter/ipynotebook
 RUN pip install --no-cache-dir --upgrade ipykernel \
@@ -28,5 +29,5 @@ WORKDIR ${NOTEBOOK_DIR}
 
 EXPOSE 8888
 
-ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/usr/local/bin/tini", "--"]
 CMD ["jupyter", "notebook", "--no-browser"]
