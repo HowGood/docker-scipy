@@ -1,6 +1,6 @@
 # howgood/scipy
 
-FROM howgood/python
+FROM howgood/python:latest
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir --upgrade \
       cython \
       numpy \
       scipy \
-    && rm -rf /root/.cache /root/.local /tmp/*
+    && rm -Rf ~/.cache ~/.local /tmp/*
