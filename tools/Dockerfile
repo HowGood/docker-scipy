@@ -9,6 +9,7 @@ RUN pip install --no-cache-dir --upgrade \
       xlwt \
       xlsxwriter \
       sqlparse \
+      cchardet \
       ipython \
       ptpython \
-    && rm -rf /root/.cache /root/.local /tmp/*
+    && rm -Rf ~/.cache ~/.local /tmp/*
