@@ -3,7 +3,7 @@
 FROM howgood/scipy:tools
 
 # Install tini to manage stray jupyter processes
-ENV TINI_VERSION v0.9.0
+ENV TINI_VERSION v0.10.0
 RUN curl -L -o /tmp/tini \
       "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini" \
     && mv /tmp/tini /usr/local/bin/tini \
@@ -16,11 +16,11 @@ RUN pip install --no-cache-dir --upgrade ipykernel \
          jupyter \
          ipython[notebook] \
          widgetsnbextension \
-    && rm -rf /root/.cache /root/.local /tmp/*
+    && rm -Rf ~/.cache ~/.local /tmp/*
 
 # Add default wildcard ip to jupyter config
-RUN mkdir -p -m 700 /root/.jupyter/ \
-    && echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
+RUN mkdir -p -m 700 ~/.jupyter/ \
+    && echo "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
 
 # Add a notebooks volume, and default to that working directory
 ENV NOTEBOOK_DIR /usr/src/notebooks
