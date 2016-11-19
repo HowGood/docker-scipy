@@ -1,6 +1,6 @@
 # howgood/scipy:jupyter
 
-FROM howgood/scipy:tools
+FROM howgood/scipy:3.5-tools
 
 # Install tini to manage stray jupyter processes
 ENV TINI_VERSION v0.10.0

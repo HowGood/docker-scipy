@@ -1,6 +1,6 @@
 # howgood/scipy:tools
 
-FROM howgood/scipy:latest
+FROM howgood/scipy:3.5
 
 # Install interactive shell tools
 RUN pip install --no-cache-dir --upgrade \
