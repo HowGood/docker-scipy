@@ -1,6 +1,6 @@
 # howgood/scipy
 
-FROM howgood/python:3.5
+FROM howgood/python:latest
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
